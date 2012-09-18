@@ -64,9 +64,21 @@ var setupPhotos = (function ($) {
     function imageAppender (id) {
         var holder = document.getElementById(id);
         return function (img) {
-            var elm = document.createElement('div');
+
+            var className = 'icon-heart-empty';
+
+            if (app.isFav(jQuery(img).attr('src'))) {
+                className = 'icon-heart';
+            }
+
+            var container       = document.createElement('div');
+            container.innerHTML = '<a class="fav '+className+'" title="favme!"></a>';
+
+            var elm       = document.createElement('div');
             elm.className = 'photo';
             elm.appendChild(img);
+            elm.appendChild(container);
+
             holder.appendChild(elm);
         };
     }

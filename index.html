@@ -2,18 +2,20 @@
 <html>
   <head>
     <title>Photos</title>
+    <link href="font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="photos.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Photos</h1>
-    
-    <div id="photos"></div>
-
+  <h1 class="icon-camera-retro">Photos</h1>
+  <div id="photos"></div>
 	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="photos.js"></script>
-    <script>
-    setupPhotos(['squirrel', 'cat'], function (err, result) {
+    <script src="photos.js?v=3"></script>
+    <script src="app.js?v=3"></script>
+    <script type="text/javascript">
+    var app;
+    setupPhotos(['squirrel', 'cat', 'dog'], function (err, result) {
         if (err) { return console.error(err); }
+        app = new App;
     });
     </script>
   </body>

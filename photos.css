@@ -2,10 +2,20 @@ body {
     font: 16px/1 Helvetica, sans-serif;
 }
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('font/fontawesome-webfont.eot');
+  src: url('font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+     url('font/fontawesome-webfont.woff') format('woff'),
+     url('font/fontawesome-webfont.ttf') format('truetype'),
+     url('font/fontawesome-webfont.svg#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 #photos {
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 
 .photo {
@@ -13,6 +23,20 @@ body {
     margin: 0 2px 2px 0;
     overflow: hidden;
     height: 160px;
+    position: relative;
+}
+
+.fav {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.fav:hover {
+ font-size: 28px; 
 }
 
 .photo,
